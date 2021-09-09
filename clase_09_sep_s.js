@@ -20,27 +20,28 @@ Crear un nuevo Array a partir del primero, donde vamos a guardar solamente las c
 */
 
 function Computadora(ram, cpu, disco, monitor, gpu) {
-    this.ram = ram;
-    this.cpu = cpu;
-    this.disco = disco;
-    this.monitor = monitor;
-    this.gpu = gpu;
+  this.ram = ram;
+  this.cpu = cpu;
+  this.disco = disco;
+  this.monitor = monitor;
+  this.gpu = gpu;
 }
 
 const listaComputadoras = [];
 
 listaComputadoras.push(
-    new Computadora("8gb", "intel", "2gb", "14pul", true),
-    new Computadora("12gb", "intel", "2gb", "14pul", false),
-    new Computadora("6gb", "intel", "2gb", "14pul", true),
-    new Computadora("32gb", "intel", "2gb", "14pul", false),
-    new Computadora("64gb", "intel", "2gb", "14pul", true)
-)
+  new Computadora("8gb", "intel", "2gb", "14pul", true),
+  new Computadora("12gb", "intel", "2gb", "14pul", false),
+  new Computadora("6gb", "intel", "2gb", "14pul", true),
+  new Computadora("32gb", "intel", "2gb", "14pul", false),
+  new Computadora("64gb", "intel", "2gb", "14pul", true)
+);
 
-const arrGpu = listaComputadoras.filter((element) => element.gpu === true);
+const arrGpu = listaComputadoras.filter((element) => element.gpu);
 
 console.log(listaComputadoras);
 console.log(arrGpu);
+console.log("**************");
 
 /*Ejercicio 4
 Crear una función que calcule cuántos litros de nafta 
@@ -49,3 +50,16 @@ gasta un auto que consume 2 litros cada 100km, ingresando
  Luego crear una función que, a partir de ese dato, 
  devuelva cuánto significa eso en pesos ingresando por parámetro
   el precio del litro de nafta.*/
+
+function calcularLitros(km) {
+  return (2 * km) / 100;
+}
+
+console.log(`los litros consumidos son: ${calcularLitros(500)}`);
+
+function calcularPrecio(litros, precio) {
+  return litros * precio;
+}
+
+const litros = calcularLitros(500);
+console.log(`El precio es: ${calcularPrecio(litros, 200)}`);
