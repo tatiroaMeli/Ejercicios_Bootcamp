@@ -18,8 +18,9 @@ Mostrar el saldo de la cuenta.
 Mostrar el historial de movimientos.
 
 Ejercicio 3
-Crear dos o tres cuentas, mostrar por consola el saldo inicial, realizar operaciones,
- mostrarlas por consola y luego mostrar el saldo final.
+Crear dos o tres cuentas, mostrar por consola el saldo inicial, 
+realizar operaciones,  mostrarlas por consola y luego mostrar
+ el saldo final.
 */
 
 function CuentaBancaria(nombre, apellido, cuenta) {
@@ -34,7 +35,7 @@ function CuentaBancaria(nombre, apellido, cuenta) {
   };
 
   this.acreditar = function (dinero) {
-    this.movimiento= [...this.movimiento, `Debitado ${dinero}`];
+    this.movimiento= [...this.movimiento, {tipo:"acredito", valor: dinero}];
     this.saldo += dinero;
     console.log(this.saldo);
     console.log(this.movimiento);
@@ -44,7 +45,7 @@ function CuentaBancaria(nombre, apellido, cuenta) {
     if (this.saldo < valorDebitado) {
       console.log("saldo insuficiente");
     } else {
-      this.movimiento = [...this.movimiento, `Debitado ${valorDebitado}`];
+      this.movimiento = [...this.movimiento, {tipo:"debito", valor:valorDebitado}];
       this.saldo += valorDebitado;
       console.log(this.saldo);
       console.log(this.movimiento);
